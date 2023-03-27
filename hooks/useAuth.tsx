@@ -58,22 +58,6 @@ import {
         [auth]
       )
 
-      useEffect(() => {
-        if (user) {
-            // Logged in...
-            setUser(user)
-            setLoading(false)
-            router.push('/')
-          } else {
-            // Not logged in...
-            setUser(null)
-            setLoading(true)
-            router.push('/login')
-          }
-          
-      }, [user]);
-    
-
     // Register
     const signUp = async (email:string, password: string) => {
         setLoading(true)

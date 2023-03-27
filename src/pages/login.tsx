@@ -13,7 +13,7 @@ function Login() {
     const [login, setLogin] = useState(false)
     const { signIn, signUp } = useAuth()
 
-    const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
+    const { register, handleSubmit, formState: { errors } } = useForm<Input>();
     
     const onSubmit: SubmitHandler<Input> = async data => {
         if (login) {
