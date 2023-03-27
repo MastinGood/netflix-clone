@@ -1,4 +1,13 @@
-import { CheckIcon, HandThumbUpIcon, PauseIcon, PlayIcon, PlusIcon, SpeakerWaveIcon, SpeakerXMarkIcon, XMarkIcon } from "@heroicons/react/24/solid"
+import { 
+  CheckIcon, 
+  HandThumbUpIcon, 
+  PauseIcon, 
+  PlayIcon, 
+  PlusIcon, 
+  SpeakerWaveIcon, 
+  SpeakerXMarkIcon, 
+  XMarkIcon 
+} from "@heroicons/react/24/solid"
 import MuiModal from "@mui/material/Modal"
 import { DocumentData } from "firebase/firestore"
 import { useEffect, useState } from "react"
@@ -74,7 +83,7 @@ function Modal() {
               <XMarkIcon className="h-6 w-6" />
             </button>
     
-            <div className="relative pt-[56.25%]">
+            <div className="relative pt-[56.25%] bg-[#181818]">
               <ReactPlayer
                 url={`https://www.youtube.com/watch?v=${trailer}`}
                 width="100%"
@@ -85,26 +94,26 @@ function Modal() {
               />
               <div className="absolute bottom-10 flex w-full items-center justify-between px-10">
                 <div className="flex space-x-2">
-                  <button onClick={handlePlay} className="flex items-center gap-x-2 rounded bg-white px-8 text-xl font-bold text-black transition hover:bg-[#e6e6e6]">
+                  <button onClick={handlePlay} className="flex items-center gap-x-2 rounded bg-white px-4 md:px-6 text-md md:text-xl font-bold text-black transition hover:bg-[#e6e6e6]">
                     {isPlaying ? (<PauseIcon className="h-7 w-7" /> ) : (<PlayIcon className="h-7 w-7 text-black" />) }
                     {isPlaying ? "Pause" : "Play" }
                   </button>
                   <button className="modalButton" onClick={handleList}>
                     {addedToList ? (
-                      <CheckIcon className="h-7 w-7" />
+                      <CheckIcon/>
                     ) : (
-                      <PlusIcon className="h-7 w-7" />
+                      <PlusIcon/>
                     )}
                   </button>
                   <button className="modalButton">
-                    <HandThumbUpIcon className="h-6 w-6" />
+                    <HandThumbUpIcon />
                   </button>
                 </div>
                 <button className="modalButton" onClick={() => setMuted(!muted)}>
                   {muted ? (
-                    <SpeakerXMarkIcon className="h-6 w-6" />
+                    <SpeakerXMarkIcon/>
                   ) : (
-                    <SpeakerWaveIcon className="h-6 w-6" />
+                    <SpeakerWaveIcon/>
                   )}
                 </button>
               </div>
@@ -113,17 +122,17 @@ function Modal() {
               <div className="space-y-6 text-lg">
                 <div className="flex items-center space-x-2 text-sm">
                   <p className="font-semibold text-green-400">
-                    {movie!.vote_average * 10}% Match
+                    {Math.floor(movie!.vote_average * 10)}% Match
                   </p>
-                  <p className="font-light">
+                  <p className="font-medium">
                     {movie?.release_date || movie?.first_air_date}
                   </p>
-                  <div className="flex h-4 items-center justify-center rounded border border-white/40 px-1.5 text-xs">
+                  <div className="flex h-4 items-center justify-center rounded border border-white/40 px-1.5 text-xs font-medium">
                     HD
                   </div>
                 </div>
                 <div className="flex flex-col gap-x-10 gap-y-4 font-light md:flex-row">
-                  <p className="w-5/6">{movie?.overview}</p>
+                  <p className="w-5/6 font-medium">{movie?.overview}</p>
                   <div className="flex flex-col space-y-3 text-sm">
                     <div>
                       <span className="text-[gray]">Genres:</span>{' '}
