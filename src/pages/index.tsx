@@ -40,8 +40,9 @@ const Home = ({
   const showModal = useRecoilValue(modalState)
   const subscription = useSubscription(user)
   console.log(subscription)
-  if (loading || subscription == null) return null
-  if(!subscription) return <Plans products={products} />
+  if (loading || subscription === null) return null
+
+  if (!subscription) return <Plans products={products} />
 
   return (
     <>
