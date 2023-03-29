@@ -2,6 +2,7 @@ import Head from "next/head"
 import Image from "next/image"
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import Loader from "../../components/Loader";
 import useAuth from "../../hooks/useAuth";
 
 interface Input {
@@ -12,11 +13,13 @@ interface Input {
 function Login() {
     const [login, setLogin] = useState(false)
     const { signIn, signUp } = useAuth()
+    const [isLoading, setIsLoading] = useState(false)
 
     const { register, handleSubmit, formState: { errors } } = useForm<Input>();
     
     const onSubmit: SubmitHandler<Input> = async data => {
         if (login) {
+          setIsLoading(true)
             await signIn(data.email, data.password)
         } else {
             await signUp(data.email, data.password)
@@ -59,7 +62,8 @@ function Login() {
           type="submit"
           onClick={() => setLogin(true)}
         >
-          Sign In
+          { isLoading ? <Loader color="dark:fill-[#ffffff]" /> : "Sign In" }
+          
         </button>
         <div className="text-[gray]">
           New to Netflix?{' '}
