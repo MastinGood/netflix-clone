@@ -16,7 +16,7 @@ function Plans({products}: Props) {
     const [selectedPlan, setSelectedPlan] = useState<Product | null>(products[2])
     const [isBillingLoading, setIsBillingLoading] = useState(false)
     const { logout, user } = useAuth()
-
+    console.log(products)
     const subscribeToPlan = () => {
         if(!user) return
         loadCheckout(selectedPlan?.prices[0].id!)
@@ -29,18 +29,18 @@ function Plans({products}: Props) {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <header className="border-b  border-white/10 bg-[#141414]">
+        <header className="border-b  border-white/10 bg-[#141414] py-2">
             <Link href={"/"}>
-                <img src="https://about.netflix.com/images/logo.png" width={150} height={100} 
-                className="cursor-pointer object-contain"
+                <img src="https://about.netflix.com/images/logo.png"  
+                className="cursor-pointer object-contain h-[3.2rem] md:h-[4rem]"
             />
             </Link>
-            <button onClick={logout} className="text-lg font-medium hover:underline text-white">
+            <button onClick={logout} className="text-sm md:text-lg font-medium hover:underline text-white">
                 Sign Out
             </button>
         </header>
-        <main className="mx-auto max-w-5xl px-5 pt-28 pb-12 transition-all md:px-10">
-            <h1 className="mb-3 text-3xl font-medium mt-8">
+        <main className="mx-auto max-w-5xl px-5 pt-16 md:pt-24 pb-12 transition-all md:px-10">
+            <h1 className="mb-3 text-3xl lg:text-4xl font-medium mt-8">
             Choose the plan that's right for you
             </h1>
             <ul>
@@ -58,8 +58,8 @@ function Plans({products}: Props) {
             </li>
             </ul>
 
-            <div className="mt-4 flex flex-col space-y-4">
-                <div className="flex w-full items-center justify-end self-end md:w-3/5">
+            <div className="mt-4 flex flex-col space-y-6">
+                <div className="flex w-full items-center justify-end self-end md:w-2/3">
                     {products.map((product) => (
                     <div
                         className={`planBox ${
@@ -68,7 +68,7 @@ function Plans({products}: Props) {
                         key={product.id}
                         onClick={() => setSelectedPlan(product)}
                     >
-                        {product.name}
+                        <p className="text-sm md:text-base">{product.name}</p>
                     </div>
                     ))}
                 </div>

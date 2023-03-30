@@ -47,10 +47,17 @@ import {
               setUser(user)
               setLoading(false)
             } else {
+            
               // Not logged in...
               setUser(null)
               setLoading(true)
-              router.push('/login')
+
+              if (router.pathname == "/signup") {
+                router.push('/signup')
+              } else {
+                router.push('/login')
+              }
+              
             }
     
             setInitialLoading(false)

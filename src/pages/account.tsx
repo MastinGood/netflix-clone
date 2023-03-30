@@ -24,16 +24,16 @@ function account({products} : Props) {
             </Head>
             <header className="border-b  border-white/10 bg-[#141414]">
                 <Link href={"/"}>
-                    <img src="https://about.netflix.com/images/logo.png" width={150} height={100} 
-                    className="cursor-pointer object-contain"
+                    <img src="https://about.netflix.com/images/logo.png" 
+                    className="cursor-pointer object-contain h-[3.2rem] md:h-[4rem]"
                 />
                 </Link>
 
                 <Link href={"/account"}>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png?20201013161117" alt="" className="h-8 w-8 rounded cursor-pointer"/>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png?20201013161117" alt="" className="h-6 w-6 md:h-8 md:w-8 rounded cursor-pointer"/>
                 </Link>
             </header>
-            <main className="mx-auto max-w-6xl px-5 pt-32 md:pt-40 pb-12 transition-all md:px-10">
+            <main className="mx-auto max-w-6xl px-5 pt-[6rem] md:pt-40 pb-12 transition-all md:px-10">
                 <div className="flex flex-col gap-x-4 md:flex-row md:items-center">
                     <h1 className="text-3xl md:text-4xl">Account</h1>
                     <div className="-ml-0.5 flex items-center gap-x-1.5">
@@ -63,7 +63,7 @@ function account({products} : Props) {
 
                 <div className="mt-6 grid grid-cols-1 gap-x-4 border px-4 py-4 md:grid-cols-4 md:border-x-0 md:border-t md:border-b-0 md:px-0">
                 <h4 className="text-lg text-[gray]">Settings</h4>
-                <p className="col-span-3 cursor-pointer text-blue-500 hover:underline" onClick={ logout }>
+                <p className="col-span-3 font-semibold cursor-pointer text-blue-500 hover:underline" onClick={ logout }>
                     Sign out of all devices
                 </p>
                 </div>
