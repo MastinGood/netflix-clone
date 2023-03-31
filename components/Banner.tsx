@@ -26,7 +26,7 @@ function Banner({netflixOriginals}: Props) {
         <div className="absolute top-0 left-0 h-[95vh] w-screen -z-10">
             <Image src={`${baseUrl}${movie?.backdrop_path || movie?.poster_path}`} fill alt={''} style={{objectFit:"cover"}}/>
         </div>
-        <h1 className='text-2xl lg:text-7xl md:text-4xl font-bold'>{movie?.title || movie?.name || movie?.original_name}</h1>
+        <h1 className='text-2xl lg:text-7xl md:text-4xl font-bold mt-24'>{movie?.title || movie?.name || movie?.original_name}</h1>
         <p className='max-w-sm text-sm md:max-w-lg md:text-lg lg:max-w-2xl lg:text-2xl'>{movie?.overview}</p>
         <div className="flex space-x-3">
             <button className="bannerButton bg-white text-black" onClick={() => {

@@ -62,16 +62,16 @@ const Home = ({
         <main className="relative px-4 pb-24 lg:space-y-24 lg:px-16">
         <Banner netflixOriginals={netflixOriginals} />
           <section className="md:space-y-24">
-          <Row title="Trending Now" movies={trendingNow} />
-          <Row title="Top Rated" movies={topRated} />
-          <Row title="Action Thrillers" movies={actionMovies} />
+          <Row title="Trending Now" movies={trendingNow} type="carousel"/>
+          <Row title="Top Rated" movies={topRated} type="carousel"/>
+          <Row title="Action Thrillers" movies={actionMovies} type="carousel"/>
           {/* My List */}
-          {list.length > 0 && <Row title="My List" movies={list} />}
+          {list.length > 0 && <Row title="My List" movies={list} type="carousel"/>}
 
-          <Row title="Comedies" movies={comedyMovies} />
-          <Row title="Scary Movies" movies={horrorMovies} />
-          <Row title="Romance Movies" movies={romanceMovies} />
-          <Row title="Documentaries" movies={documentaries} />
+          <Row title="Comedies" movies={comedyMovies} type="carousel"/>
+          <Row title="Scary Movies" movies={horrorMovies} type="carousel"/>
+          <Row title="Romance Movies" movies={romanceMovies} type="carousel"/>
+          <Row title="Documentaries" movies={documentaries} type="carousel"/>
           </section>
 
         </main>

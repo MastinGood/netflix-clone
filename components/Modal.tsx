@@ -196,7 +196,7 @@ function Modal() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-x-10 gap-y-4 font-light md:flex-row">
-                  <p className="w-5/6 font-medium">{movie?.overview}</p>
+                  <p className="w-5/6 font-medium text-base md:text-lg">{movie?.overview}</p>
                   <div className="flex flex-col space-y-3 text-sm">
                     <div>
                       <span className="text-[gray]">Genres:</span>{' '}

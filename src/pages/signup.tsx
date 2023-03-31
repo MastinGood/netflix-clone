@@ -16,6 +16,7 @@ function signup() {
     const [isLoading, setIsLoading] = useState(false)
     
     const onSubmit: SubmitHandler<Input> = async data => {
+        setIsLoading(true)
         await signUp(data.email, data.password)
     }
     
